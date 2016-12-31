@@ -15,7 +15,7 @@ Package: \tab survHE\cr
 Type: \tab Package\cr
 Version: \tab 1.0.4\cr
 Date: \tab 2016-21-14\cr
-License: \tab GPL2 \cr
+License: \tab GPL3 \cr
 LazyLoad: \tab yes\cr
 }
 Contains a suite of functions to perform survival analysis with the aim of aiding
