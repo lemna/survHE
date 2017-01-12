@@ -468,9 +468,7 @@ make.surv <- function(fit,mod=1,t=NULL,newdata=NULL,nsim=1,...) {
   }
   
   n.elements <- length(S[[1]]) 
-  if (fit$method=="mle") {
-    mat <- lapply(1:n.elements,function(j) matrix(unlist(lapply(1:nsim,function(i) S[[i]][[j]][,2])),nrow=nsim,byrow=T))
-  }
+
   mat <- lapply(1:n.elements,function(j) matrix(unlist(lapply(1:nsim,function(i) S[[i]][[j]][,2])),nrow=nsim,byrow=T))
   
   ### des.mat = X; rownames(des.mat) = names(fit$misc$km$strata)
