@@ -3,8 +3,11 @@ Type: Package
 Title: Survival Analysis in Health Economic Evaluation
 Version: 1.0.4
 Date: 2017-01-04
-Author: Gianluca Baio
-Maintainer: Gianluca Baio <gianluca@stats.ucl.ac.uk>
+Authors@R: c(person("Gianluca", "Baio", email = gianluca@stats.ucl.ac.uk,
+role = c("aut", "cre")),
+person("Will", "Browne", role = "ctb"),
+person("Peter", "Konings", role = "ctb"),
+person("Andrea", "Berardi", role = "ctb"))
 URL: https://github.com/giabaio/survHE
 BugReports: https://github.com/giabaio/survHE/issues
 Depends: R (>= 3.0.2), flexsurv, Rcpp (>= 0.11.0)
