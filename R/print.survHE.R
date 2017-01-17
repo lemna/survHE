@@ -1,3 +1,28 @@
+#' Print a summary of the survival model(s)
+#' 
+#' Prints the summary table for the model(s) fitted, with the estimate of the parameters
+#'
+#' @param x the \code{survHE} object (the output of the call to \code{fit.models})
+#' @param mod the index of the model. Default value is 1, but the user can choose which model 
+#' fit to visualise, if the call to fit.models has a vector argument for distr (so many 
+#' models are fitted & stored in the same object)
+#' @param ... additional options, including:
+#' \itemize{
+#' \item{digits} {number of significant digits to be shown in the summary table 
+#' (default = 6)}
+#' \item{nsim} {number of simulations from the joint posterior for \code{INLA} 
+#' (default = 100)}
+#' \item{original} {a flag to say whether the original table from either \code{flexsurv}
+#' or \code{INLA} or \code{rstan} should be printed}
+#'}
+#' @return
+#' @export
+#' @author Gianluca Baio
+#' @examples
+#' data(bc)
+#' mle = fit.models(formula = Surv(recyrs, censrec) ~ group, data = bc,
+#'     distr = "exp", method = "mle")
+#' print(mle)
 print.survHE <- function(x,mod=1,...) {
   # Creates a print method for the objects in the class survHE
   # x is the survHE object (the output of the call to fit.models)
