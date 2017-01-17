@@ -1,3 +1,40 @@
+#' Plot survival curves for the fitted models
+#'
+#' Plots the results of model fit.
+#'
+#' @param ... Must include at least one result object saved as the call to the \code{fit.models} function.
+#' See details for other options.
+#'
+#' @details Other possibilities are additional (mainly graphical) options. These are:
+#' \itemize{
+#' \item{xlab} {a string with the label for the x-axis (default = "time")}
+#' \item{ylab} {a string with the label for the y-axis (default = "Survival")}
+#' \item{lab.trt} {a (vector of) string(s) indicating the labels associated with the
+#' strata defining the different survival curves to plot. Default to the value used by
+#' the Kaplan Meier estimate given in \code{\link{fit.models}}}
+#' \item{cex.trt} {factor by which the size of the font used to write the strata is 
+#' resized (default = 0.8)}
+#' \item{n.risk} {logical. If \code{TRUE} (default) writes the number at risk at different
+#' time points (as determined by the Kaplan Meier estimate)}
+#' \item{newdata} {a list (of lists) providing the values for the relevant covariates
+#' If NULL, then will use the mean values for the covariates if at least one is 
+#' a continuous variable, or the combination of the categorical covariates.}
+#' \item{xlim} {a vector determining the limits for the x-axis}
+#' \item{colors} {a vector of characters defining the colours in which to plot the
+#' different survival curves}
+#' \item{labs} {a vector of characters defining the names of the models fitted}
+#' \item{add.km} {whether to also add the Kaplan Meier estimates of the data. Defaults to \code{TRUE}}
+#' }
+#'
+#' @return a plot containing the Kaplan-Meier curve and the fitted model
+#' @export
+#' @author Gianluca Baio
+#'
+#' @examples
+#' data(bc)
+#' mle <- fit.models(formula = Surv(recyrs, censrec) ~ group, data = bc,
+#'    distr = "exp", method = "mle")
+#' plot(mle)
 plot.survHE <- function(...) {
   ## Plots the KM + the results of the model fitted by fit.models()
   ## Uses different commands, depending on which method has been used to fit the models
