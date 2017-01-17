@@ -1,3 +1,54 @@
+#' Engine for Probabilistic Sensitivity Analysis on the survival curves
+#' 
+#' Creates the survival curves for the fitted model(s)
+#'
+#' @param fit the result of the call to the \code{fit.models} function, containing the model fitting
+#' (and other relevant information)
+#' @param mod the index of the model. Default value is 1, but the user can choose which model fit to 
+#' visualise, if the call to fit.models has a vector argument for distr (so many models are fitted 
+#' and stored in the same object)
+#' @param t the time vector to be used for the estimation of the survival curve
+#' @param newdata a list (of lists), specifiying the values of the covariates at which the
+#' computation is performed. 
+#' @param nsim The number of simulations from the distribution of the survival curves. Defaults to 1, 
+#' in which case uses the point estimate for the relevant distributional parameters and computes 
+#' the resulting survival curve
+#' @param ... Additional options
+#'
+#' @details Specifying \code{newdata} for example as
+#'   \code{list(list(arm=0),list(arm=1))} will create two survival curves, one
+#'   obtained by setting the covariate \code{arm} to the value 0 and the other
+#'   by setting it to the value 1. In line with \code{flexsurv} notation, the
+#'   user needs to either specify the value for *all* the covariates or for none
+#'   (in which case, \code{newdata=NULL}, which is the default). If some value
+#'   is specified and at least one of the covariates is continuous, then a
+#'   single survival curve will be computed in correspondence of the average
+#'   values of all the covariates (including the factors, which in this case are
+#'   expanded into indicators).
+#'
+#' @return  A list with the following components:
+#' \itemize{
+#'  \item{S} {a list --- for each simulated value of the parameters, a
+#' list with the survival curves associated with the configuration of the
+#' covariates}
+#'  \item{sim} {simulated values for the main parameters (eg scale,
+#' shape, rate, mean, sd) for each configuration of the covariates}
+#'  \item{nsim} {the number of simulations saved}
+#'  \item{mat} {a list --- for each configuration of covariates a matrix
+#'  with nsims rows and ntimes columns with the survival curves (to be read row-wise)}
+#'  \item{des.mat} {a design matrix with the combination of the covariates used
+#'  (each represents an element in the lists \code{S} and \code{mat})}
+#'  }
+#' @export
+#'
+#' @author Gianluca Baio
+#' @examples
+#' # Loads an example dataset from 'flexsurv'
+#' data(bc)
+#' Fits the same model using the 3 inference methods
+#' mle <- fit.models(formula = Surv(recyrs, censrec) ~ group, data = bc,
+#' distr = "exp", method = "mle")
+#' (p.mle <- make.surv(mle))
 make.surv <- function(fit,mod=1,t=NULL,newdata=NULL,nsim=1,...) {
   ## Creates the survival curves for the fitted model(s)
   # fit = the result of the call to the fit.models function, containing the model fitting (and other relevant information)
