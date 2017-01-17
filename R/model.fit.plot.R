@@ -1,3 +1,14 @@
+#' Graphical representation of the measures of model fitting based on Information Criteria
+#'
+#' Plots a summary of the model fit for all the models fitted
+#'
+#' @param ... Optional inputs. Must include at least one \code{survHE} object.
+#' @param type should the AIC, BIC or DIC be plotted? (values = \code{"aic"}, \code{"bic"} or \code{"dic"})
+#'
+#' @return barplot of the selected Information Criteria for each model
+#' @export
+#'
+#' @author Gianluca Baio
 model.fit.plot <- function(...,type="aic") {
   ## Plots a summary of the model fit for all the models 
   ## Can also combine several survHE objects each containing the fit for one model
