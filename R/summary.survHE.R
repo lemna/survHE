@@ -1,3 +1,31 @@
+#' Prints a summary table for the distribution the mean survival time for a given model and data
+#' 
+#' Calculates the mean survival time as the area under the survival curve
+#'
+#' @param object a \code{survHE} object (resulting from the call to \code{\link{fit.models}}
+#' @param mod the model to be analysed (default = 1)
+#' @param t the vector of times to be used in the computation. Default = \code{NULL}, 
+#' which means the observed times will be used. The vector of times should be: 
+#' long enough so that S(t) goes to 0; and dense enough so that
+#' the approximation to the AUC is sufficiently precise
+#' @param nsim the number of simulations from the survival curve distributions to be used 
+#' (to compute interval estimates)
+#' @param ... Additional options
+#'
+#' @return A list comprising of the following elements:
+#' \itemize{
+#' \item{mean.surv} {A matrix with the simulated values for the mean survival times}
+#' \item{tab} {A summary table}
+#' }
+#' @export
+#'
+#' @author Gianluca Baio
+#' 
+#' @examples
+#' data(bc)
+#' mle <- fit.models(formula = Surv(recyrs, censrec) ~ group, data = bc,
+#'    distr = "exp", method = "mle")
+#' summary(mle, nsim = 100)
 summary.survHE <- function(object,mod=1,t=NULL,nsim=1000,...) {
   # Computes the estimated mean survival as the area under the survival curve
   # This is obtained using the trapezoidal method by taking the average of the "left" and "right" y-values.
