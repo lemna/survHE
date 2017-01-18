@@ -13,6 +13,7 @@
 #' @return a plot of survival curves for all PSA simulations
 #' @export
 #' @import graphics
+#' @importFrom grDevices colors adjustcolor
 #' @importFrom stats quantile
 #' @author Gianluca Baio
 #' @examples 

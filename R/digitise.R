@@ -15,7 +15,7 @@
 #' 
 #' @return text files with Kaplan-Meier and individual level data
 #' @export
-#' @import utils
+#' @importFrom utils read.table write.table
 #' @importFrom graphics hist
 digitise <- function(surv_inp,nrisk_inp,km_output="KMdata.txt",ipd_output="IPDdata.txt") {
   # Adapted from Patricia Guyot (2012)

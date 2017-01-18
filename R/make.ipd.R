@@ -13,7 +13,7 @@
 #'
 #' @return a dataframe
 #' @export
-#' @import utils
+#' @importFrom utils read.table
 make.ipd <- function(ipd_files,ctr=1,var.labs=c("time","event","arm")) {
   ## Piles in the simulated IPD resulting from running digitise for more than one treatment arm  
   ## ipd_files = a list including the names of the IPD files created as output of digitise
