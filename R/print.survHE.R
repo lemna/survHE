@@ -17,6 +17,7 @@
 #'}
 #' @return prints a summary table
 #' @export
+#' @import stats
 #' @author Gianluca Baio
 #' @examples
 #' data(bc)

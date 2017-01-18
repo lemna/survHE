@@ -12,6 +12,8 @@
 #'}
 #' @return a plot of survival curves for all PSA simulations
 #' @export
+#' @import graphics
+#' @importFrom stats quantile
 #' @author Gianluca Baio
 #' @examples 
 #' data(bc)

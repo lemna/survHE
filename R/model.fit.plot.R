@@ -9,6 +9,7 @@
 #' @export
 #'
 #' @author Gianluca Baio
+#' @import graphics
 model.fit.plot <- function(...,type="aic") {
   ## Plots a summary of the model fit for all the models 
   ## Can also combine several survHE objects each containing the fit for one model

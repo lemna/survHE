@@ -40,7 +40,7 @@
 #'  (each represents an element in the lists \code{S} and \code{mat})}
 #'  }
 #' @export
-#'
+#' @import stats
 #' @author Gianluca Baio
 #' @examples
 #' # Loads an example dataset from 'flexsurv'

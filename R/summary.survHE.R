@@ -18,7 +18,7 @@
 #' \item{tab} {A summary table}
 #' }
 #' @export
-#'
+#' @import stats utils
 #' @author Gianluca Baio
 #' 
 #' @examples

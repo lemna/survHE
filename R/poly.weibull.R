@@ -49,7 +49,7 @@
 #' 
 #' @author Gianluca Baio
 #' @export
-#' @import rstan
+#' @import rstan stats
 #'
 #' @references Demiris \emph{et al.} (2015), SMMR \strong{24}(2), 287-301
 poly.weibull <- function(formula=NULL,data,...) {

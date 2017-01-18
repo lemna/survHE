@@ -9,7 +9,8 @@
 #'
 #' @return A diagnostic plot
 #' @export
-#'
+#' @importFrom stats qnorm
+#' @import graphics
 #' @author William Browne
 test.linear.assumptions <- function(fit, mod = 1, label_plot = FALSE, ...) {
   ## THIS IS INTERESTING, BUT NEEDS TO COMPLETE WITH THE OTHER DISTRIBUTIONS!!!

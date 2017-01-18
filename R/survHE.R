@@ -79,7 +79,7 @@
 #' and the original data frame.}}
 #' 
 #' @export
-#' @import flexsurv INLA rstan
+#' @import flexsurv INLA rstan stats 
 #'
 #' @examples
 #' # Loads an example dataset from 'flexsurv'
