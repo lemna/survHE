@@ -58,7 +58,7 @@ Specifying \code{newdata} for example as
 \examples{
 # Loads an example dataset from 'flexsurv'
 data(bc)
-Fits the same model using the 3 inference methods
+# Fits the same model using the 3 inference methods
 mle <- fit.models(formula = Surv(recyrs, censrec) ~ group, data = bc,
 distr = "exp", method = "mle")
 (p.mle <- make.surv(mle))
