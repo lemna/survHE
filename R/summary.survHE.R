@@ -26,6 +26,7 @@
 #' mle <- fit.models(formula = Surv(recyrs, censrec) ~ group, data = bc,
 #'    distr = "exp", method = "mle")
 #' summary(mle, nsim = 100)
+#' @method summary survHE
 summary.survHE <- function(object,mod=1,t=NULL,nsim=1000,...) {
   # Computes the estimated mean survival as the area under the survival curve
   # This is obtained using the trapezoidal method by taking the average of the "left" and "right" y-values.

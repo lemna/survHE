@@ -35,6 +35,7 @@
 #' mle <- fit.models(formula = Surv(recyrs, censrec) ~ group, data = bc,
 #'    distr = "exp", method = "mle")
 #' plot(mle)
+#' @method plot survHE
 plot.survHE <- function(...) {
   ## Plots the KM + the results of the model fitted by fit.models()
   ## Uses different commands, depending on which method has been used to fit the models

@@ -4,7 +4,8 @@
 \alias{make.surv}
 \title{Engine for Probabilistic Sensitivity Analysis on the survival curves}
 \usage{
-make.surv(fit, mod = 1, t = NULL, newdata = NULL, nsim = 1, ...)
+\method{make}{survHE}(fit, mod = 1, t = NULL, newdata = NULL, nsim = 1,
+  ...)
 }
 \arguments{
 \item{fit}{the result of the call to the \code{fit.models} function, containing the model fitting

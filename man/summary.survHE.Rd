@@ -4,7 +4,7 @@
 \alias{summary.survHE}
 \title{Prints a summary table for the distribution the mean survival time for a given model and data}
 \usage{
-summary.survHE(object, mod = 1, t = NULL, nsim = 1000, ...)
+\method{summary}{survHE}(object, mod = 1, t = NULL, nsim = 1000, ...)
 }
 \arguments{
 \item{object}{a \code{survHE} object (resulting from the call to \code{\link{fit.models}}}

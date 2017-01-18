@@ -24,6 +24,7 @@
 #' mle = fit.models(formula = Surv(recyrs, censrec) ~ group, data = bc,
 #'     distr = "exp", method = "mle")
 #' print(mle)
+#' @method print survHE
 print.survHE <- function(x,mod=1,...) {
   # Creates a print method for the objects in the class survHE
   # x is the survHE object (the output of the call to fit.models)

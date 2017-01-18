@@ -4,7 +4,7 @@
 \alias{plot.survHE}
 \title{Plot survival curves for the fitted models}
 \usage{
-plot.survHE(...)
+\method{plot}{survHE}(...)
 }
 \arguments{
 \item{...}{Must include at least one result object saved as the call to the \code{fit.models} function.

@@ -49,6 +49,7 @@
 #' mle <- fit.models(formula = Surv(recyrs, censrec) ~ group, data = bc,
 #' distr = "exp", method = "mle")
 #' (p.mle <- make.surv(mle))
+#' @method make survHE
 make.surv <- function(fit,mod=1,t=NULL,newdata=NULL,nsim=1,...) {
   ## Creates the survival curves for the fitted model(s)
   # fit = the result of the call to the fit.models function, containing the model fitting (and other relevant information)
