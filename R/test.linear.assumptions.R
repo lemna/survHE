@@ -11,8 +11,6 @@
 #' @export
 #'
 #' @author William Browne
-#'
-#' @examples
 test.linear.assumptions <- function(fit, mod = 1, label_plot = FALSE, ...) {
   ## THIS IS INTERESTING, BUT NEEDS TO COMPLETE WITH THE OTHER DISTRIBUTIONS!!!
   

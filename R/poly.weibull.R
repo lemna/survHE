@@ -10,20 +10,20 @@
 #' @param ... Additional options (for INLA or HMC). See details.
 #' 
 #' @details HMC specific options:
-#' \itemize{
-#' \item{chains} {number of chains to run in the HMC (default = 2)}
-#' \item{iter} {total number of iterations (default = 2000)}
-#' \item{warmup} {number of warmup iterations (default = iter/2)}
-#' \item{thin} {number of thinning (default = 1)
-#' \item{control} {a list specifying Stan-related options, eg 
+#' \describe{
+#' \item{chains}{number of chains to run in the HMC (default = 2)}
+#' \item{iter}{total number of iterations (default = 2000)}
+#' \item{warmup}{number of warmup iterations (default = iter/2)}
+#' \item{thin}{number of thinning (default = 1)}
+#' \item{control}{a list specifying Stan-related options, eg 
 #' \code{control = list(adapt_delta = 0.85)} (default = NULL)}
-#' \item{seed} {the random seed (to make things replicable)}
-#' \item{pars} {a vector of parameters (string, default = NA)}
-#' \item{include} {a logical indicator (if \code{FALSE}, then the pars are not saved; 
+#' \item{seed}{the random seed (to make things replicable)}
+#' \item{pars}{a vector of parameters (string, default = NA)}
+#' \item{include}{a logical indicator (if \code{FALSE}, then the pars are not saved; 
 #' default = \code{TRUE})}
-#' \item{priors} {a list (of lists) specifying the values for the parameters of the 
+#' \item{priors}{a list (of lists) specifying the values for the parameters of the 
 #' prior distributions in the models}
-#' \item{save.stan} {a logical indicator (default = \code{FALSE}). If \code{TRUE}, then saves the data 
+#' \item{save.stan}{a logical indicator (default = \code{FALSE}). If \code{TRUE}, then saves the data 
 #' list for Stan and the model file(s)}
 #' }
 #' @return An object of class \code{survHE} containing the following elements:
@@ -49,6 +49,7 @@
 #' 
 #' @author Gianluca Baio
 #' @export
+#' @import rstan
 #'
 #' @references Demiris \emph{et al.} (2015), SMMR \strong{24}(2), 287-301
 poly.weibull <- function(formula=NULL,data,...) {

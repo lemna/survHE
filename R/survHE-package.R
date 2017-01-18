@@ -7,4 +7,6 @@
 #' 
 #' @docType package
 #' @name survHE
+#' @useDynLib survHE, .registration = TRUE
+#' @import Rcpp flexsurv  rms xlsx tools rstan INLA methods
 NULL

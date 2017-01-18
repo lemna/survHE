@@ -15,7 +15,7 @@
 #' \item{original} {a flag to say whether the original table from either \code{flexsurv}
 #' or \code{INLA} or \code{rstan} should be printed}
 #'}
-#' @return
+#' @return prints a summary table
 #' @export
 #' @author Gianluca Baio
 #' @examples

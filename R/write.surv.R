@@ -19,8 +19,6 @@
 #' @import xlsx
 #' 
 #' @author Gianluca Baio
-#'
-#' @examples
 write.surv <- function(object,file,sheet=NULL,what="surv") {
   # Writes the survival summary to an excel file (helpful to then call the values in the Markov model)
   # object = a summary.flexsurvreg object containing the survival curves (with times, estimates and interval limits)

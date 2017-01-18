@@ -11,11 +11,11 @@
 #' @param distr a (vector of) string(s) containing the name(s) of the model(s) to be fitted. 
 #' Available options are: 
 #' \describe{
-#' \item{flexsurv:} "exponential", "gamma", "genf", "gengamma", "gompertz", "weibull", 
-#' "weibullPH", "loglogistic", "lognormal"
-#' \item{INLA:} "exponential", "weibull", "lognormal", "loglogistic"
-#' \code{hmc:} "exponential", "gamma", "genf", "gengamma", "gompertz", "weibull", "weibullPH", 
-#' "loglogistic", "lognormal"}
+#' \item{flexsurv:}{"exponential", "gamma", "genf", "gengamma", "gompertz", "weibull", 
+#' "weibullPH", "loglogistic", "lognormal"}
+#' \item{INLA:}{"exponential", "weibull", "lognormal", "loglogistic"}
+#' \code{hmc:}{"exponential", "gamma", "genf", "gengamma", "gompertz", "weibull", "weibullPH", 
+#' "loglogistic", "lognormal"}}
 #' @param method A string specifying the inferential method (\code{'mle'}, \code{'inla'} or \code{'hmc'}).
 #' If \code{method} is set to \code{'hmc'}, then \code{survHE} will write suitable model code
 #' in the Stan language (according to the specified distribution), prepare data and initial 
@@ -24,11 +24,11 @@
 #' \itemize{
 #' \item \strong{INLA} specific options
 #' \describe{ 
-#' \item{dz} {defines the step length for the grid search over the hyperparameters space 
+#' \item{dz}{defines the step length for the grid search over the hyperparameters space 
 #' (default = 0.1)}
-#' \item{diff.logdens} {defines the difference in the log-density for the hyperparameters 
+#' \item{diff.logdens}{defines the difference in the log-density for the hyperparameters 
 #' to stop integration (default = 5)}
-#' \item{control.fixed} {defines the default for the priors, unless specified by the user. 
+#' \item{control.fixed}{defines the default for the priors, unless specified by the user. 
 #' Default values are
 #' \itemize{
 #'  \item prior mean = 0 for *all* fixed effects
@@ -36,7 +36,7 @@
 #'  \item prior mean = 0 for the intercept
 #'  \item prior prec -> 0 for the intercept
 #'   }}
-#' \item{control.family} {a list of options. If distr is a vector, then can be provided as 
+#' \item{control.family}{a list of options. If distr is a vector, then can be provided as 
 #' a named list of options, for example something like this:  
 #'   \code{control.family = list(weibull = list(param = c(.1, .1)), lognormal = list(initial = 2))}.
 #' The names of the elements of the list need to be the same as those given in the 
@@ -44,19 +44,19 @@
 #' 
 #' \item \strong{HMC} specific options
 #' \describe{
-#' \item{chains} {number of chains to run in the HMC (default = 2)}
-#' \item{iter} {total number of iterations (default = 2000)}
-#' \item{warmup} {number of warmup iterations (default = iter/2)}
-#' \item{thin} {number of thinning (default = 1)}
-#' \item{control} {a list specifying Stan-related options, eg 
+#' \item{chains}{number of chains to run in the HMC (default = 2)}
+#' \item{iter}{total number of iterations (default = 2000)}
+#' \item{warmup}{number of warmup iterations (default = iter/2)}
+#' \item{thin}{number of thinning (default = 1)}
+#' \item{control}{a list specifying Stan-related options, eg 
 #' \code{control = list(adapt_delta = 0.85)} (default = NULL)}
-#' \item{seed} {the random seed (to make things replicable)}
-#' \item{pars} {a vector of parameters (string, default = NA)}
-#' \item{include} {a logical indicator (if FALSE, then the pars are not saved; 
+#' \item{seed}{the random seed (to make things replicable)}
+#' \item{pars}{a vector of parameters (string, default = NA)}
+#' \item{include}{a logical indicator (if FALSE, then the pars are not saved; 
 #' default = TRUE)}
-#' \item{priors} {a list (of lists) specifying the values for the parameters of the 
+#' \item{priors}{a list (of lists) specifying the values for the parameters of the 
 #' prior distributions in the models}
-#' \item{save.stan} {a logical indicator (default = FALSE). If TRUE, then saves the data 
+#' \item{save.stan}{a logical indicator (default = FALSE). If TRUE, then saves the data 
 #' list for Stan and the model file(s)}
 #' }}
 #'
@@ -64,21 +64,22 @@
 #' 
 #' @return An object of class \code{survHE} containing the following elements
 #' \describe{
-#' \item{models} {A list containing the fitted models. These contain the output from the original 
+#' \item{models}{A list containing the fitted models. These contain the output from the original 
 #' inference engine (\code{flexsurv}, \code{INLA} or \code{rstan}). Can be processed
 #' using the methods specific to the original packages, or via \code{survHE}-specific
 #' methods (such as \code{plot}, \code{print}) or other specialised functions (eg to
 #' extrapolate the survival curves, etc).}
-#' \item{model.fitting} {A list containing the output of the model-fit statistics (AIC, BIC, DIC). The AIC and
+#' \item{model.fitting}{A list containing the output of the model-fit statistics (AIC, BIC, DIC). The AIC and
 #' BIC are estimated for all methods, while the DIC is only estimated when using Bayesian
 #' inference.}
-#' \item{method} {A string indicating the method used to fit the model, ie \code{'mle'}, \code{'inla'} or
+#' \item{method}{A string indicating the method used to fit the model, ie \code{'mle'}, \code{'inla'} or
 #' \code{'hmc'}.}
 #' \item{misc}{A list containing the time needed to run the model(s) (in seconds), the formula used, the
 #' results of the Kaplan-Meier analysis (which is automatically performed using \code{npsurv})
 #' and the original data frame.}}
 #' 
 #' @export
+#' @import flexsurv INLA rstan
 #'
 #' @examples
 #' # Loads an example dataset from 'flexsurv'
