@@ -6,7 +6,8 @@
 #' flexsurv and a Bayesian perspective.
 #' 
 #' @docType package
+#' @import flexsurv rms xlsx tools rstan INLA methods
 #' @name survHE
 #' @useDynLib survHE, .registration = TRUE
-#' @import Rcpp flexsurv  rms xlsx tools rstan INLA methods
+#' @importFrom Rcpp sourceCpp
 NULL

@@ -16,7 +16,8 @@ Imports:
     tools,
     rstan(>= 2.8.1),
     INLA,
-    methods
+    methods,
+    rJava
 Suggests:
     shinystan
 LinkingTo: StanHeaders (>= 2.9.0), rstan (>= 2.9.0), BH (>= 1.60.0),
