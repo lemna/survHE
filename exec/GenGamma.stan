@@ -3,6 +3,17 @@
 // First defines the Generalised Gamma model for fully observed and censored cases
 
 functions {
+  /*
+  * define the Generalized Gamma model for fully observed cases
+  *
+  * Internal stan function - GenGamma model
+  *
+  * @param x values
+  * @param mu location
+  * @param sigma scale
+  * @param Q shape
+  * @return total log-density
+  */
   real gen_gamma_lpdf(vector x, vector mu, real sigma, real Q) {
     // Uses the same parameterisation as flexsurv
     // mu = location
@@ -21,6 +32,18 @@ functions {
     return lprob;
   }
   
+  /*
+  * define the Generalized Gamma model for censored cases
+  *
+  * Internal stan function - GenGamma model
+  *
+  * @param x values
+  * @param mu location
+  * @param sigma scale
+  * @param Q shape
+  * @param unknown
+  * @return total log-density
+  */
   real gen_gamma_cens_lpdf(vector x, vector mu, real sigma, real Q, vector u) {
     // Rescales the distribution accounting for right censoring
     vector[num_elements(x)] prob;

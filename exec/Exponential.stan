@@ -2,6 +2,15 @@
 
 functions {
   // Defines the log hazard
+  /*
+  * Return the log hazard
+  *
+  * Internal stan function - Exponential survival model
+  *
+  * @param t vector of times
+  * @param rate rate
+  * @return a vector containing the log hazards
+  */
   vector log_h (vector t, vector rate) {
     vector[num_elements(t)] log_h;
     log_h = log(rate);
@@ -9,6 +18,15 @@ functions {
   }
   
   // Defines the log survival
+  /*
+  * Return the log survival
+  *
+  * Internal stan function - Exponential survival model
+  *
+  * @param t vector of times
+  * @param rate rate
+  * @return a vector containing the log Survival
+  */
   vector log_S (vector t, vector rate) {
     vector[num_elements(t)] log_S;
     log_S = -rate .* t;
@@ -16,6 +34,16 @@ functions {
   }
   
   // Defines the sampling distribution
+    /*
+  * Defines the sampling distribution for the Exponental survival model
+  *
+  * Internal stan function - Exponential survival model
+  *
+  * @param t vector of times
+  * @param d censoring indicator
+  * @param rate rate
+  * @return sampling distribution
+  */
   real surv_exponential_lpdf (vector t, vector d, vector rate) {
     vector[num_elements(t)] log_lik;
     real prob;

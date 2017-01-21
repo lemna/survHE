@@ -47,7 +47,18 @@ functions {
       return prob;
     }
     */
-    
+      /*
+  * define the log pdf
+  *
+  * Internal stan function - poly-Weibull model
+  *
+  * @param t times
+  * @param d censoring indicator
+  * @param shape shape
+  * @param rate rate
+  * @param M number of components in the poly-Weibull model
+  * @return log pdf
+  */
     real polyweibull_lpdf(vector t, vector d, vector shape, matrix rate, int M) {
       matrix[num_elements(t),M] h;
       matrix[num_elements(t),M] log_S;

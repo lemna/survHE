@@ -1,6 +1,19 @@
 // Royston-Parmar splines model 
 
 functions {
+  /*
+  * define the log pdf
+  *
+  * Internal stan function - Royston-Parmar model
+  *
+  * @param t times
+  * @param d event indicator
+  * @param gamma M + 2 vector of coefficients for the flexible part
+  * @param B matrix of basis
+  * @param DB matrix of derivatives for the basis
+  * @param linpred fixed effect part
+  * @return log pdf
+  */
   real rps_lpdf(vector t, vector d, vector gamma, matrix B, matrix DB, vector linpred) {
     // t = vector of observed times
     // d = event indicator (=1 if event happened and 0 if censored)

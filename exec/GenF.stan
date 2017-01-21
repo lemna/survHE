@@ -2,6 +2,18 @@
 
 // First defines the Generalised F model for fully observed and censored cases
 functions {
+  /*
+  * define the Generalized F model for fully observed cases
+  *
+  * Internal stan function - GenF model
+  *
+  * @param x values
+  * @param mu location
+  * @param sigma scale (positive)
+  * @param Q first shape
+  * @param P second shape (positive)
+  * @return total log-density
+  */
     real genf_lpdf(vector x, vector mu, real sigma, real Q, real P) {
       // mu = location (\in R)
       // sigma = scale (>0)
@@ -26,7 +38,19 @@ functions {
       lprob = sum(prob);
       return lprob;
     }
-    
+  /*
+  * define the Generalized F model for censored cases
+  *
+  * Internal stan function - GenF model
+  *
+  * @param x values
+  * @param mu location
+  * @param sigma scale (positive)
+  * @param Q first shape
+  * @param P second shape (positive)
+  * @param u unknown
+  * @return total log-density
+  */
     real genf_cens_lpdf(vector x, vector mu, real sigma, real Q, real P, vector u) {
       vector[num_elements(x)] prob;
       real lprob;

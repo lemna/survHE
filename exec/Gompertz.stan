@@ -2,6 +2,16 @@
 
 functions {
   // Defines the log hazard
+  /*
+  * define the log hazard
+  *
+  * Internal stan function - Gompertz model
+  *
+  * @param t times
+  * @param shape shape
+  * @param rate rate
+  * @return log hazard
+  */
   vector log_h (vector t, real shape, vector rate) {
     vector[num_elements(t)] log_h;
     log_h = log(rate) + (shape * t);
@@ -9,6 +19,16 @@ functions {
   }
   
   // Defines the log survival
+  /*
+  * define the log Survival
+  *
+  * Internal stan function - Gompertz model
+  *
+  * @param t times
+  * @param shape shape
+  * @param rate rate
+  * @return log Survival
+  */
   vector log_S (vector t, real shape, vector rate) {
     vector[num_elements(t)] log_S;
     for (i in 1:num_elements(t)) {
@@ -18,6 +38,17 @@ functions {
   }
   
   // Defines the sampling distribution
+  /*
+  * define the sampling distribution
+  *
+  * Internal stan function - Gompertz model
+  *
+  * @param t times
+  * @param d censoring indicator
+  * @param shape shape
+  * @param scale scale
+  * @return sampling distribution
+  */
   real surv_gompertz_lpdf (vector t, vector d, real shape, vector scale) {
     vector[num_elements(t)] log_lik;
     real prob;

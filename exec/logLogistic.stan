@@ -2,6 +2,16 @@
 
 functions {
   // Defines the log hazard
+  /*
+  * define the log hazard
+  *
+  * Internal stan function - log-logistic model
+  *
+  * @param t times
+  * @param shape shape
+  * @param scale scale
+  * @return log hazard
+  */
   vector log_h (vector t, real shape, vector scale) {
     vector[num_elements(t)] log_h;
     for (i in 1:num_elements(t)) {
@@ -11,6 +21,16 @@ functions {
   }
   
   // Defines the log survival
+  /*
+  * define the log survival
+  *
+  * Internal stan function - log-logistic model
+  *
+  * @param t times
+  * @param shape shape
+  * @param scale scale
+  * @return log Survival
+  */
   vector log_S (vector t, real shape, vector scale) {
     vector[num_elements(t)] log_S;
     for (i in 1:num_elements(t)) {
@@ -20,6 +40,17 @@ functions {
   }
   
   // Defines the sampling distribution
+  /*
+  * define the sampling distribution
+  *
+  * Internal stan function - log-logistic model
+  *
+  * @param t times
+  * @param d censoring indicator
+  * @param shape shape
+  * @param scale scale
+  * @return sampling distribution
+  */
   real surv_loglogistic_lpdf (vector t, vector d, real shape, vector scale) {
     vector[num_elements(t)] log_lik;
     real prob;

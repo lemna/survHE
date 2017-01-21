@@ -2,6 +2,16 @@
 
 functions {
   // Defines the log survival
+  /*
+  * define the log Survival
+  *
+  * Internal stan function - log-Normal model
+  *
+  * @param t times
+  * @param mean mean
+  * @param sd standard deviation
+  * @return log Survival
+  */
   vector log_S (vector t, vector mean, real sd) {
     vector[num_elements(t)] log_S;
     for (i in 1:num_elements(t)) {
@@ -11,6 +21,16 @@ functions {
   }
   
   // Defines the log hazard
+  /*
+  * define the log hazard
+  *
+  * Internal stan function - log-Normal model
+  *
+  * @param t times
+  * @param mean mean
+  * @param sd standard deviation
+  * @return log hazard
+  */
   vector log_h (vector t, vector mean, real sd) {
     vector[num_elements(t)] log_h;
     vector[num_elements(t)] ls;
@@ -22,6 +42,17 @@ functions {
   }
 
   // Defines the sampling distribution
+  /*
+  * define the sampling distribution
+  *
+  * Internal stan function - log-Normal model
+  *
+  * @param t times
+  * @param d censoring indicator
+  * @param mean mean
+  * @param sd standard deviation
+  * @return sampling distribution
+  */
   real surv_lognormal_lpdf (vector t, vector d, vector mean, real sd) {
     vector[num_elements(t)] log_lik;
     real prob;
