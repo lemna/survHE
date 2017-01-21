@@ -1,4 +1,4 @@
-#' @import methods
+#' @import methods rJava
 #' @importFrom Rcpp loadModule
 .onLoad <- function(libname, pkgname) {
 if (!("methods" %in% .packages())) attachNamespace("methods")
