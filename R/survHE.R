@@ -79,7 +79,8 @@
 #' and the original data frame.}}
 #' 
 #' @export
-#' @import flexsurv INLA rstan stats 
+#' @import flexsurv INLA rstan stats
+#' @importClassesFrom Matrix dsparseMatrix
 #'
 #' @examples
 #' # Loads an example dataset from 'flexsurv'
