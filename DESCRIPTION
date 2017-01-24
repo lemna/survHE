@@ -3,7 +3,7 @@ Type: Package
 Title: Survival Analysis in Health Economic Evaluation
 Version: 1.0.4
 Date: 2017-01-04
-Authors@R: c(person("Gianluca", "Baio", email = "gianluca@stats.ucl.ac.uk", role = c("aut", "cre")), person("Will", "Browne", role = "ctb"), person("Peter", "Konings", role = "ctb"), person("Andrea", "Berardi", role = "ctb"))
+Authors@R: c(person("Gianluca", "Baio", email = "gianluca@stats.ucl.ac.uk", role = c("aut", "cre")), person("Andrea", "Berardi", role = "ctb"), person("Will", "Browne", role = "ctb"), person("Peter", "Konings", role = "ctb"))
 URL: https://github.com/giabaio/survHE
 BugReports: https://github.com/giabaio/survHE/issues
 Depends:
@@ -16,8 +16,7 @@ Imports:
     tools,
     rstan(>= 2.8.1),
     INLA,
-    methods,
-    rJava
+    methods
 Suggests:
     shinystan
 LinkingTo: StanHeaders (>= 2.9.0), rstan (>= 2.9.0), BH (>= 1.60.0),
