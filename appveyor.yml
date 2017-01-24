@@ -16,9 +16,11 @@ environment:
   matrix:
     - R_VERSION: stable
       R_ARCH: x64
+      R_CHECK_ARGS: --no-multiarch --as-cran --no-manual 
     
     - R_VERSION: stable
       R_ARCH: i386
+      R_CHECK_ARGS: --no-multiarch --as-cran --no-manual 
 
 build_script:
   - travis-tool.sh install_deps
