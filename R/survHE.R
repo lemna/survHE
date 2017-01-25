@@ -89,19 +89,19 @@
 #' # Fits the same model using the 3 inference methods
 #' mle <- fit.models(formula = Surv(recyrs, censrec) ~ group, data = bc,
 #'     distr = "exp", method = "mle")
-# ' #inla <- fit.models(formula = Surv(recyrs, censrec) ~ group, data = bc,
-# ' #   distr = "exp", method = "inla")
+#' inla <- fit.models(formula = Surv(recyrs, censrec) ~ group, data = bc,
+#'     distr = "lognormal", method = "inla")
 #' hmc <- fit.models(formula = Surv(recyrs, censrec) ~ group, data = bc,
 #'     distr = "exp", method = "hmc")
 #' 
 #' # Prints the results in comparable fashion using the survHE method
 #' print(mle)
-#' #print(inla)
+#' print(inla)
 #' print(hmc)
 #' 
 #' # Or visualises the results using the original packages methods
 #' print(mle, original = TRUE)
-#' #print(inla, original = TRUE)
+#' print(inla, original = TRUE)
 #' print(hmc, original = TRUE)
 #' 
 #' # Plots the survival curves and estimates
