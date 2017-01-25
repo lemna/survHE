@@ -19,6 +19,8 @@
 #' }
 #' @export
 #' @import stats utils
+#' @method summary survHE
+#' @exportMethod summary
 #' @author Gianluca Baio
 #' 
 #' @examples

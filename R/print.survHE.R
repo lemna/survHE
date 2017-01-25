@@ -16,8 +16,7 @@
 #' or \code{INLA} or \code{rstan} should be printed}
 #'}
 #' @return prints a summary table
-#' @export
-#' @import stats
+
 #' @author Gianluca Baio
 #' @examples
 #' data(bc)
@@ -25,6 +24,8 @@
 #'     distr = "exp", method = "mle")
 #' print(mle)
 #' @method print survHE
+#' @export
+#' @import stats
 print.survHE <- function(x,mod=1,...) {
   # Creates a print method for the objects in the class survHE
   # x is the survHE object (the output of the call to fit.models)

@@ -27,7 +27,7 @@
 #' }
 #'
 #' @return a plot containing the Kaplan-Meier curve and the fitted model
-#' @export
+#' 
 #' @author Gianluca Baio
 #'
 #' @examples
@@ -36,6 +36,8 @@
 #'    distr = "exp", method = "mle")
 #' plot(mle)
 #' @method plot survHE
+#' @exportMethod plot
+#' @export
 plot.survHE <- function(...) {
   ## Plots the KM + the results of the model fitted by fit.models()
   ## Uses different commands, depending on which method has been used to fit the models
