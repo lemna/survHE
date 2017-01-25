@@ -9,7 +9,6 @@ BugReports: https://github.com/giabaio/survHE/issues
 Depends:
     R (>= 3.0.2),
     flexsurv,
-    methods,
     Rcpp (>= 0.11.0)
 Imports:
     rms,
@@ -17,7 +16,8 @@ Imports:
     tools,
     rstan(>= 2.8.1),
     INLA,
-    Matrix
+    Matrix,
+    methods
 Suggests:
     shinystan
 LinkingTo: StanHeaders (>= 2.9.0), rstan (>= 2.9.0), BH (>= 1.60.0),
