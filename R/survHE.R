@@ -80,7 +80,7 @@
 #' 
 #' @export
 #' @import flexsurv INLA rstan stats
-#' @importClassesFrom Matrix dsparseMatrix
+#' @importClassesFrom Matrix dsparseMatrix replValueSp
 #'
 #' @examples
 #' # Loads an example dataset from 'flexsurv'
