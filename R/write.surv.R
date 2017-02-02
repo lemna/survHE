@@ -15,7 +15,7 @@
 #' }
 #'
 #' @return an excel file
-#' @export
+#' @export write.surv
 #' @import xlsx
 #' 
 #' @author Gianluca Baio

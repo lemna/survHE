@@ -48,7 +48,7 @@
 #' }
 #' 
 #' @author Gianluca Baio
-#' @export
+#' @export poly.weibull
 #' @import rstan stats
 #'
 #' @references Demiris \emph{et al.} (2015), SMMR \strong{24}(2), 287-301
