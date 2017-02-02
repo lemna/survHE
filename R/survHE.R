@@ -79,6 +79,7 @@
 #' and the original data frame.}}
 #' 
 #' @export
+#' @exportClass survHE
 #' @import flexsurv INLA rstan stats
 #' @importClassesFrom Matrix dsparseMatrix
 #'
