@@ -23,6 +23,7 @@
 #' mle = fit.models(formula = Surv(recyrs, censrec) ~ group, data = bc,
 #'     distr = "exp", method = "mle")
 #' print(mle)
+#' @method print survHE
 #' @export
 #' @import stats
 print.survHE <- function(x,mod=1,...) {
