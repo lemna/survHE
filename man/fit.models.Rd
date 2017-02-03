@@ -123,4 +123,3 @@ plot(mle, hmc, labs = c("MLE", "HMC"), colors = c("black", "blue"))
 \author{
 Gianluca Baio
 }
-

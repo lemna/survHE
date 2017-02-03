@@ -24,4 +24,3 @@ p(t)=1-S(t+k)/S(t), where k is the Markov model cycle length and t is a generic 
 \author{
 Gianluca Baio
 }
-

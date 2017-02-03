@@ -24,4 +24,3 @@ Tests the linear assumptions for the parametric model
 \author{
 William Browne
 }
-

@@ -60,10 +60,9 @@ prior distributions in the models}
 list for Stan and the model file(s)}
 }
 }
-\author{
-Gianluca Baio
-}
 \references{
 Demiris \emph{et al.} (2015), SMMR \strong{24}(2), 287-301
 }
-
+\author{
+Gianluca Baio
+}

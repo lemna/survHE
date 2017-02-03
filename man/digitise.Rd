@@ -23,12 +23,11 @@ text files with Kaplan-Meier and individual level data
 Produces txt files with Kaplan Meier and individual level survival data from digitised 
 Kaplan Meier curves obtained by DigitizeIT
 }
+\references{
+Guyot, P. (2012)
+}
 \author{
 Patricia Guyot
 
 Gianluca Baio
 }
-\references{
-Guyot, P. (2012)
-}
-

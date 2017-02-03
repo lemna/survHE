@@ -47,4 +47,3 @@ plot(mle)
 \author{
 Gianluca Baio
 }
-

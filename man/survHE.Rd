@@ -11,4 +11,3 @@ analysis in health economic evaluation. survHE can fit a large range of
 survival models using both a frequentist approach (by calling the R package
 flexsurv and a Bayesian perspective.
 }
-

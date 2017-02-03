@@ -25,4 +25,3 @@ Piles in the simulated IPD resulting from running digitise for more than one tre
 \author{
 Gianluca Baio
 }
-

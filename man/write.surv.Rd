@@ -31,4 +31,3 @@ in the Markov model)
 \author{
 Gianluca Baio
 }
-

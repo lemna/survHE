@@ -66,4 +66,3 @@ distr = "exp", method = "mle")
 \author{
 Gianluca Baio
 }
-

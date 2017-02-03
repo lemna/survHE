@@ -40,4 +40,3 @@ summary(mle, nsim = 100)
 \author{
 Gianluca Baio
 }
-

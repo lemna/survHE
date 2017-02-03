@@ -34,4 +34,3 @@ psa.plot(p.mle)
 \author{
 Gianluca Baio
 }
-
