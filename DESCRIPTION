@@ -16,8 +16,7 @@ Imports:
     rms,
     xlsx,
     tools,
-    rstan(>= 2.8.1),
-    Matrix
+    rstan(>= 2.8.1)
 Suggests:
     shinystan
 LinkingTo: StanHeaders (>= 2.9.0), rstan (>= 2.9.0), BH (>= 1.60.0),
