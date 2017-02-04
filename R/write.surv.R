@@ -17,6 +17,7 @@
 #' @return an excel file
 #' @export write.surv
 #' @import xlsx
+#' @importFrom tools file_ext
 #' 
 #' @author Gianluca Baio
 write.surv <- function(object,file,sheet=NULL,what="surv") {
